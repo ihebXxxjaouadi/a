@@ -1,0 +1,44 @@
+<div class="addReclamationView">
+    <div class="animatedContainer">
+      <span>Quel ton <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; reclatmation</span>
+    </div>
+    <div class="reclamationForm">
+      <header>
+        <h1>Creér ton form</h1>
+      </header>
+      <main>
+        <div class="notification" [ngClass]="{'showNot' : isNot}">
+          reclamation envoyeé !
+        </div>
+        <div class="inlineInput">
+          <div>
+
+            <input type="text"  placeholder="nom" #nm (keyup)="fillnm(nm.value)">
+          <p [ngClass]="{'reducepad' : nmCntr}">{{nmCntr}}</p>
+          </div>
+  <div>
+
+    <input type="text"  placeholder="prenom" #pnm (keyup)="fillpnm(pnm.value)"> 
+  <p [ngClass]="{'reducepad' : pnmCntr}">{{pnmCntr}}</p>
+  </div>          
+
+        </div>
+        <input type="text" placeholder="email" #email (keyup)="fillemail(email.value)">
+        <p [ngClass]="{'reducepad' : emailCntr}">{{emailCntr}}</p>
+        <input type="text" placeholder="adresse" #add (keyup)="filladd(add.value)">
+        <p [ngClass]="{'reducepad' : addCntr}">{{addCntr}}</p>
+
+        <input type="text" placeholder="livreur" #liv (keyup)="fillliv(liv.value)">
+        <p [ngClass]="{'reducepad' : livCntr}">{{livCntr}}</p>
+
+        <input type="text" placeholder="reference" #ref (keyup)="fillref(ref.value)">
+        <p [ngClass]="{'reducepad' : refCntr}">{{refCntr}}</p>
+
+        <textarea cols="20" rows="7" placeholder="reclamation" #rec (keyup)="fillrec(rec.value)"></textarea>
+        <p [ngClass]="{'reducepad' : recCntr}">{{recCntr}}</p>
+
+        <button type="button" (click)="checkSendForm()">Envoyer</button>
+      </main>
+      <app-footer></app-footer>
+    </div>
+  </div>
